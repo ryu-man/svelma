@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "file": "tooltip.91a0f9a2.css",
+  "sources": [
+    "../../../../../../src/routes/components/tooltip.svelte"
+  ],
+  "sourcesContent": [
+    "<script context=\"module\">\n  export async function preload() {\n    const res = await this.fetch(`components/tooltip.json`);\n    const jsdoc = await res.json();\n\n    return { jsdoc };\n  }\n</script>\n\n<script>\n  import { Button, Tooltip} from 'svelma'\n  import DocHeader from '../../components/DocHeader.svelte'\n  import Example from '../../components/Example.svelte'\n  import JSDoc from '../../components/JSDoc.svelte'\n\n  export let jsdoc\n  \n</script>\n\n<style>\n.buttons {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n}\n</style>\n\n<DocHeader title=\"Tooltip\" subtitle=\"Display a brief helper text to your user\" />\n\n<Example code={`\n  <script>\n    import { Button, Tooltip} from 'svelma'\n  </script>\n\n  <Tooltip label=\"Tooltip right\" position=\"is-right\">\n    <Button>Right</Button>\n  </Tooltip>\n\n  <Tooltip label=\"Tooltip top\">\n    <Button>Top (default)</Button>\n  </Tooltip>\n\n  <Tooltip label=\"Tooltip bottom\" position=\"is-bottom\">\n    <Button>Bottom</Button>\n  </Tooltip>\n\n  <Tooltip label=\"Tooltip left\" position=\"is-left\">\n    <Button>Left</Button>\n  </Tooltip>`}>\n\n  <div slot=\"preview\">\n    <div class=\"buttons\">\n      <Tooltip label=\"Tooltip right\" position=\"is-right\">\n        <Button>Right</Button>\n      </Tooltip>\n\n      <Tooltip label=\"Tooltip top\">\n        <Button>Top (default)</Button>\n      </Tooltip>\n\n      <Tooltip label=\"Tooltip bottom\" position=\"is-bottom\">\n        <Button>Bottom</Button>\n      </Tooltip>\n\n      <Tooltip label=\"Tooltip left\" position=\"is-left\">\n        <Button>Left</Button>\n      </Tooltip>\n    </div>\n  </div>\n</Example>\n\n<JSDoc {jsdoc} />"
+  ],
+  "names": [],
+  "mappings": "AAoBA,QAAQ,cAAC,CAAC,AACR,OAAO,CAAE,WAAW,CACpB,OAAO,CAAE,WAAW,CACpB,OAAO,CAAE,IAAI,CACb,gBAAgB,CAAE,KAAK,CACnB,aAAa,CAAE,KAAK,CAChB,eAAe,CAAE,UAAU,CACnC,aAAa,CAAE,IAAI,CACf,SAAS,CAAE,IAAI,AACrB,CAAC"
+}
